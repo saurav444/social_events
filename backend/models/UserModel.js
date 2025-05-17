@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         // max:10
 
       },
-      show_number: {
+    show_number: {
         type: Number,
         enum : [0,1],
         default: 1
@@ -45,9 +45,9 @@ const userSchema = new mongoose.Schema({
         // max:6
     },
     userType: {
-        type: Number,
-        enum : [0,1,2],
-        default: 0
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Vendor',
+        default:null
     },
     fullAddress:{
         type:String,
@@ -58,10 +58,6 @@ const userSchema = new mongoose.Schema({
         default:null
     },
     about:{
-        type:String,
-        default:null
-    },
-    qualification:{
         type:String,
         default:null
     },
