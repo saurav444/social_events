@@ -7,6 +7,10 @@ const userAuthRoute = require('./routes/userAuth');
 const userPostRoute = require('./routes/userPostRoute');
 const userReviewRoute = require('./routes/usersRoute');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
+
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
